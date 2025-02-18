@@ -11,8 +11,8 @@ function Brands() {
       method: 'GET',
     }).then(res => {
       setBrands(res.data.data);
-
-
+    }).catch(err =>{
+      console.log(err, "error")
     });
   };
 

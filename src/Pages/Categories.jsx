@@ -4,12 +4,15 @@ import React, { useEffect, useState } from 'react';
 function Categories() {
   const [categories, setCategories] = useState([]);
   const imageUrl = 'http://realauto.limsa.uz/api/uploads/images';
+  
   const getCategory = () => {
     axios({
       url: 'https://realauto.limsa.uz/api/categories',
       method: "GET",
     }).then(res => {
       setCategories(res.data.data);
+    }).catch(err =>{
+      console.log(err, "error")
     });
   };
 

@@ -25,7 +25,10 @@ function Layout() {
       <div className='flex flex-col'>
         <NavLink to="/" className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Categories</NavLink>
         <NavLink to="/brand" className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Brands</NavLink>
-        <NavLink className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Cities</NavLink>
+        <NavLink to='/cities' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Cities</NavLink>
+        <NavLink to='/locations' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Locations</NavLink>
+        <NavLink to='/cars' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Cars</NavLink>
+        <NavLink to='/models' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Models</NavLink>
       </div>
     </aside>
 
