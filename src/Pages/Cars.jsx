@@ -10,9 +10,8 @@ function Cars() {
       url: 'https://realauto.limsa.uz/api/cars',
       method: 'GET',
     }).then(res =>{
-      console.log(res.data.data);
-      
-      setCar(res.data.data)
+      console.log(res.data);
+      setCar(res.data)
     }).catch(err =>{
       console.log(err, "error")
     })
