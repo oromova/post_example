@@ -35,7 +35,7 @@ function Categories() {
 
   useEffect(() => {
     getCategory();
-    // getnameUz();
+    getnameUz();
   }, []);
 
   const addCategories = () => {
