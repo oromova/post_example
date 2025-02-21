@@ -7,6 +7,7 @@ function Brands() {
   const [title, setTitle] = useState('');
   const [images, setImages] = useState(null)
   const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem('token')
 
   const imageUrl = 'http://realauto.limsa.uz/api/uploads/images';
 
@@ -24,16 +25,8 @@ function Brands() {
     });
   };
 
-  const getnameUz = () => {
-    axios.get('https://realauto.limsa.uz/api/brands')
-    .then(res => {
-      setTitle(res?.data?.data)
-    });
-  }
-
   useEffect(() => {
     getBrand();
-    getnameUz();
   }, []);
 
   const addBrands = () => {
@@ -48,7 +41,7 @@ function Brands() {
       method: 'POST',
       data: formData,
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Authorization': `Bearer ${token}`,
       }
     }).then(res => {
       console.log(res);
@@ -56,14 +49,14 @@ function Brands() {
       getBrand();
     }).catch(err => {
       console.log(err, "error");
-    })
+    });
   }
 
   return (
     <div>
       <input
         className='p-2.5 bg-gray-100 rounded-[10px] outline-0 mr-6'
-        type="text" placeholder='name_ru' onChange={(e) => setTitle(e?.target?.value)}
+        type="text" placeholder='name' onChange={(e) => setTitle(e?.target?.value)}
       />
       <input type="file"
         className='p-2.5 bg-gray-100 rounded-[10px] outline-0 mr-6'
@@ -72,7 +65,7 @@ function Brands() {
       <button
         type="submit"
         className="px-5 py-2.5 bg-blue-400 text-white rounded-[10px] outline-0 mr-6 
-             transition-transform duration-200 hover:scale-105 active:scale-95"
+            transition-transform duration-200 hover:scale-105 active:scale-95"
         onClick={addBrands}
       >
         Save

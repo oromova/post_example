@@ -64,7 +64,7 @@ function Categories() {
   return (
     <div>
       <input
-        className='p-2.5 bg-gray-100 rounded-[10px] outline-0 mr-6'
+        className='mb-3.5 p-2.5 bg-gray-100 rounded-[10px] outline-0 mr-6'
         type="text" placeholder='name_uz' onChange={(e) => setNameUz(e?.target?.value)}
       />
       <input
