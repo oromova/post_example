@@ -2,14 +2,17 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Loading from './Loading';
 
 function Login() {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const Login = (e) => {
     e.preventDefault();
+    setLoading(true);
     axios({
       method: "POST",
       url: "https://realauto.limsa.uz/api/auth/signin",
@@ -24,10 +27,14 @@ function Login() {
       navigate("/")
     }).catch((error) => {
       console.log(error, "error");
+    }).finally(() => {
+      setLoading(false);
     });
   };
 
-  return (
+  return loading ? (
+    <Loading/>
+  ) : (
     <div >
       <form class="w-full max-w-sm mx-auto mt-[200px]">
         <div class="md:flex md:items-center mb-6">

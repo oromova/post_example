@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
+import Loading from './Loading';
 
 function Locations() {
   const [locations, setLocations] = useState([])
@@ -51,9 +52,11 @@ function Locations() {
   }).catch(err => {
     console.log(err, 'error')
   });
- }
+ };
 
- return (
+ return loading ? (
+  <Loading />
+ ) : (
   <div>
     <input
       className='p-2.5 bg-gray-100 rounded-[10px] outline-0 mr-6'
@@ -73,7 +76,7 @@ function Locations() {
         transition-transform duration-200 hover:scale-105 active:scale-95"
       onClick={addLocation}
     >
-        Save
+      {loading ? "Sending..." : "Save"}
     </button>
 
     <div className='grid grid-cols-3 gap-[20px] mt-[50px]'>
@@ -88,7 +91,6 @@ function Locations() {
     </div>
   </div>
 );
-
 }
 
 export default Locations

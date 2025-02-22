@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import Loading from './Loading';
 
 function Cars() {
   const [car, setCar] = useState([])
@@ -27,7 +28,9 @@ function Cars() {
     getCar()
   }, [])
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className='grid grid-cols-2 pt-5 gap-5'>
       {
         car.map((item) => (

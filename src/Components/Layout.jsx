@@ -23,12 +23,12 @@ function Layout() {
     {/* Sidebar */}
     <aside className="w-64 bg-gray-100 p-4 shadow-md hidden md:block">
       <div className='flex flex-col'>
-        <NavLink to="/" className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Categories</NavLink>
-        <NavLink to="/brand" className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Brands</NavLink>
-        <NavLink to='/cities' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Cities</NavLink>
-        <NavLink to='/locations' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Locations</NavLink>
-        <NavLink to='/cars' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Cars</NavLink>
-        <NavLink to='/models' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeclassName='active'>Models</NavLink>
+        <NavLink to="/" className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeClassName='active'>Categories</NavLink>
+        <NavLink to="/brand" className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeClassName='active'>Brands</NavLink>
+        <NavLink to='/cities' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeClassName='active'>Cities</NavLink>
+        <NavLink to='/locations' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeClassName='active'>Locations</NavLink>
+        <NavLink to='/cars' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeClassName='active'>Cars</NavLink>
+        <NavLink to='/models' className="py-2 px-3 hover:bg-gray-200 rounded-md cursor-pointer" activeClassName='active'>Models</NavLink>
       </div>
     </aside>
 
